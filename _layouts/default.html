@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="format-detection" content="telephone=no">
+  <title>{% if page.title %}{{ page.title }} | Poho Ltd{% else %}Poho Ltd{% endif %}</title>
+  {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
+  <main>
+    {% unless page.body_class == "home" %}<a href="/"><img class="logo-small" src="/logo.png" alt="Poho home"></a>{% endunless %}
+{{ content }}
+  </main>
+  {% include footer.html %}
+</body>
+</html>
